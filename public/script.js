@@ -20,12 +20,7 @@ showChat.addEventListener("click", () => {
 });
 
 const user = prompt("Enter your name");
-const port=3000 ||process.env.PORT;
-var peer = new Peer(undefined, {
-  path: '/peerjs',
-  host: '/',
-  port: port
-  });
+var peer = new Peer();
 
 let myVideoStream;
 navigator.mediaDevices
