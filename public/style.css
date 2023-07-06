@@ -154,8 +154,7 @@ video {
 
 #video-grid {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: center  flex-wrap: wrap;
 }
 
 #showChat {
@@ -171,10 +170,12 @@ video {
   color: #fff;
 }
 
+/* Responsive Styling */
 @media (max-width: 700px) {
   .main__right {
     display: none;
   }
+  
   .main__left {
     width: 100%;
     flex: 1;
@@ -187,5 +188,9 @@ video {
 
   #showChat {
     display: flex;
+  }
+
+  .header__back {
+    display: block;
   }
 }
