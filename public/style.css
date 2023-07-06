@@ -172,6 +172,9 @@ video {
 }
 
 @media (max-width: 700px) {
+  .main{
+    height: auto;
+  }
   .main__right {
     display: none;
   }
@@ -180,7 +183,7 @@ video {
     flex: 1;
   }
 
-  video {
+  .video {
     height: auto;
     width: 100%;
   }
