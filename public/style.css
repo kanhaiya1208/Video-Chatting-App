@@ -204,3 +204,14 @@ video {
     display: block;
   }
 }
+@media (max-width: 700px) {
+  .videos__group {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
