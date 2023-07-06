@@ -39,6 +39,14 @@
   flex-direction: column;
 }
 
+/* .videos__group {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--main-dark);
+} */
 .videos__group {
   flex-grow: 1;
   display: flex;
@@ -46,7 +54,9 @@
   align-items: center;
   padding: 1rem;
   background-color: var(--main-dark);
+  flex-wrap: wrap;
 }
+
 
 video {
   height: 300px;
