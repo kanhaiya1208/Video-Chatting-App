@@ -20,6 +20,7 @@ showChat.addEventListener("click", () => {
 });
 
 const user = prompt("Enter your name");
+
 var peer = new Peer();
 
 let myVideoStream;
@@ -89,6 +90,7 @@ text.addEventListener("keydown", (e) => {
 const inviteButton = document.querySelector("#inviteButton");
 const muteButton = document.querySelector("#muteButton");
 const stopVideo = document.querySelector("#stopVideo");
+const endCall = document.querySelector("#endCall");
 muteButton.addEventListener("click", () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
   if (enabled) {
@@ -103,6 +105,21 @@ muteButton.addEventListener("click", () => {
     muteButton.innerHTML = html;
   }
 });
+endCall.addEventListener("click", () => {
+  // Disable video and audio tracks
+  myVideoStream.getVideoTracks()[0].enabled = false;
+  myVideoStream.getAudioTracks()[0].enabled = false;
+
+  // Close the PeerConnection
+  peer.destroy();
+
+  // Disconnect from the server and leave the room
+  socket.emit("disconnect");
+
+  // Close the current tab
+  window.close();
+});
+
 
 stopVideo.addEventListener("click", () => {
   const enabled = myVideoStream.getVideoTracks()[0].enabled;
